@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi2fmwhitutch"
-path="res://.godot/imported/coin-1.png.png-08af15a87517e13f0b96b1302f05d524.ctex"
+uid="uid://1w8x8ontal3w"
+path="res://.godot/imported/Wheat.png-12db8bf69ec8d4f53fa7691701050c3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/coin-1.png.png"
-dest_files=["res://.godot/imported/coin-1.png.png-08af15a87517e13f0b96b1302f05d524.ctex"]
+source_file="res://assets/UI/icons/Wheat.png"
+dest_files=["res://.godot/imported/Wheat.png-12db8bf69ec8d4f53fa7691701050c3e.ctex"]
 
 [params]
 

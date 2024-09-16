@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76lu1dh84m11"
-path="res://.godot/imported/DIG_WELL-2.png.png-84303d2849b1934eaa9d6c9eb00b5937.ctex"
+uid="uid://e3o65n7m6otl"
+path="res://.godot/imported/heavy-rain.png-7e408fa5dac58d439cec8e53aa645988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/DIG_WELL-2.png.png"
-dest_files=["res://.godot/imported/DIG_WELL-2.png.png-84303d2849b1934eaa9d6c9eb00b5937.ctex"]
+source_file="res://assets/UI/icons/heavy-rain.png"
+dest_files=["res://.godot/imported/heavy-rain.png-7e408fa5dac58d439cec8e53aa645988.ctex"]
 
 [params]
 

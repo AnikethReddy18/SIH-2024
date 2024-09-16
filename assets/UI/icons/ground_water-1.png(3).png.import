@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbus181w4i2fo"
-path="res://.godot/imported/menu texture.jpg-492e10867c8f5847d5149bf619a171fb.ctex"
+uid="uid://dimcioy3r0whn"
+path="res://.godot/imported/ground_water-1.png(3).png-386b4bd3021f933cc371c0701fac6ea2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/menu texture.jpg"
-dest_files=["res://.godot/imported/menu texture.jpg-492e10867c8f5847d5149bf619a171fb.ctex"]
+source_file="res://assets/UI/icons/ground_water-1.png(3).png"
+dest_files=["res://.godot/imported/ground_water-1.png(3).png-386b4bd3021f933cc371c0701fac6ea2.ctex"]
 
 [params]
 
