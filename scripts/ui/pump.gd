@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @onready var water_flow = $WaterFlow
-@onready var turn_on_pump_button = $"../CanvasLayer/InGame/TurnOnPumpButton"
+@onready var turn_on_pump_button = $"../UI/InGame/TurnOnPumpButton"
 @onready var water_layer = $"../Tilemap/Water"
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0qd7tn1dhfn0"
-path="res://.godot/imported/storm-1.png.png-c42f82a9930d5c294c007c736b3b6ef7.ctex"
+uid="uid://cee6whji32w1g"
+path="res://.godot/imported/USE.png-7c59f4174e9663921c3212e0756c1c0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/storm-1.png.png"
-dest_files=["res://.godot/imported/storm-1.png.png-c42f82a9930d5c294c007c736b3b6ef7.ctex"]
+source_file="res://assets/UI/mobile_controls/USE.png"
+dest_files=["res://.godot/imported/USE.png-7c59f4174e9663921c3212e0756c1c0c.ctex"]
 
 [params]
 

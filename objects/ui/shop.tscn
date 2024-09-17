@@ -1,13 +1,13 @@
 [gd_scene load_steps=26 format=3 uid="uid://610r1btkj4hy"]
 
 [ext_resource type="Script" path="res://scripts/ui/shop.gd" id="1_5woxf"]
-[ext_resource type="FontFile" uid="uid://bnvllro27eua7" path="res://assets/UI/Signwood-Regular.ttf" id="2_aexvl"]
+[ext_resource type="FontFile" uid="uid://bnvllro27eua7" path="res://assets/UI/fonts/Signwood-Regular.ttf" id="2_aexvl"]
 [ext_resource type="Texture2D" uid="uid://bmr71egy50xw7" path="res://assets/old/TileSheet/fetilized.png" id="3_1q7cv"]
 [ext_resource type="Texture2D" uid="uid://bsicd222w6of3" path="res://assets/old/TileSheet/drip.png" id="4_qq7ij"]
-[ext_resource type="Texture2D" uid="uid://c76lu1dh84m11" path="res://UI/DIG_WELL-2.png.png" id="5_bmhnh"]
-[ext_resource type="Texture2D" uid="uid://1w8x8ontal3w" path="res://UI/Wheat.png" id="6_60vr8"]
-[ext_resource type="Texture2D" uid="uid://csem3f0snrcgb" path="res://UI/16x16pumpkin.png" id="7_pohbv"]
-[ext_resource type="Texture2D" uid="uid://bi2fmwhitutch" path="res://UI/coin-1.png.png" id="8_t1tsu"]
+[ext_resource type="Texture2D" uid="uid://c76lu1dh84m11" path="res://assets/UI/icons/DIG_WELL-2.png.png" id="5_bmhnh"]
+[ext_resource type="Texture2D" uid="uid://1w8x8ontal3w" path="res://assets/UI/icons/Wheat.png" id="6_60vr8"]
+[ext_resource type="Texture2D" uid="uid://csem3f0snrcgb" path="res://assets/UI/icons/16x16pumpkin.png" id="7_pohbv"]
+[ext_resource type="Texture2D" uid="uid://bi2fmwhitutch" path="res://assets/UI/icons/coin-1.png.png" id="8_t1tsu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6fcd"]
 bg_color = Color(0.709804, 0.580392, 0.345098, 1)
