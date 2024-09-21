@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cahk8jujk4xhf"]
+[gd_scene load_steps=12 format=3 uid="uid://cahk8jujk4xhf"]
 
-[ext_resource type="Script" path="res://scripts/ui/in_game_ui.gd" id="1_vn4mr"]
+[ext_resource type="Script" path="res://scripts/ui/InGame/crops_utils_select.gd" id="1_vn4mr"]
 [ext_resource type="Texture2D" uid="uid://bb8j1f1e4qhae" path="res://assets/old/icons/fertilizer.png" id="2_0ylqd"]
 [ext_resource type="Texture2D" uid="uid://c6kqym4yc3lgo" path="res://assets/old/icons/pipe.png" id="3_as1aq"]
 [ext_resource type="Texture2D" uid="uid://dimcioy3r0whn" path="res://assets/UI/icons/ground_water-1.png(3).png" id="3_mpix7"]
 [ext_resource type="FontFile" uid="uid://bnvllro27eua7" path="res://assets/UI/fonts/Signwood-Regular.ttf" id="4_3mggh"]
 [ext_resource type="Texture2D" uid="uid://ct7bfjnjkn8uc" path="res://assets/old/icons/shovel.png" id="4_5ht4u"]
-[ext_resource type="Texture2D" uid="uid://bi2fmwhitutch" path="res://assets/UI/icons/coin-1.png.png" id="5_xly8j"]
+[ext_resource type="Texture2D" uid="uid://bi2fmwhitutch" path="res://UI/coin-1.png.png" id="5_xly8j"]
+[ext_resource type="Script" path="res://objects/ui/In Game/water_control_and_stats.gd" id="7_qqo3n"]
 [ext_resource type="Texture2D" uid="uid://d1gvaj32cmamc" path="res://assets/old/Crops/wheat/wheat_04.png" id="8_r6spv"]
 [ext_resource type="Texture2D" uid="uid://b003fdccm57ox" path="res://assets/old/Crops/pumkin/pumpkin_04.png" id="9_hsgc1"]
 
@@ -17,7 +18,7 @@ font_size = 31
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[node name="InGameUi" type="Control"]
+[node name="InGameUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,57 +26,140 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="CropsAndUtilsSelect" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_vn4mr")
 
-[node name="UtilsHBoxContainer" type="HBoxContainer" parent="."]
+[node name="CropsVSplitContainer" type="VSplitContainer" parent="CropsAndUtilsSelect"]
+layout_mode = 1
+offset_left = 41.0
+offset_top = 24.0
+offset_right = 83.0
+offset_bottom = 80.0
+
+[node name="currentCropVSplitContainer" type="VSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="currentCropHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="currentCropSprite" type="TextureRect" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/currentCropHSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_r6spv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="currentSpriteCount" type="Label" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/currentCropHSplitContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="displayCropsButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "\\/"
+
+[node name="selectCropHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="selectWheatButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("8_r6spv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="selectPumpkinButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("9_hsgc1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="UtilsHBoxContainer" type="HBoxContainer" parent="CropsAndUtilsSelect"]
 layout_mode = 1
 offset_left = 157.0
 offset_top = 26.0
 offset_right = 235.0
 offset_bottom = 66.0
 
-[node name="CurrentUtilContainer" type="HSplitContainer" parent="UtilsHBoxContainer"]
+[node name="CurrentUtilContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CurrentUtilSprite" type="TextureRect" parent="UtilsHBoxContainer/CurrentUtilContainer"]
+[node name="CurrentUtilSprite" type="TextureRect" parent="CropsAndUtilsSelect/UtilsHBoxContainer/CurrentUtilContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 texture = ExtResource("2_0ylqd")
 
-[node name="CurrentUtilCountLabel" type="Label" parent="UtilsHBoxContainer/CurrentUtilContainer"]
+[node name="CurrentUtilCountLabel" type="Label" parent="CropsAndUtilsSelect/UtilsHBoxContainer/CurrentUtilContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 
-[node name="SelectUtilButton" type="Button" parent="UtilsHBoxContainer"]
+[node name="SelectUtilButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.5
 text = ">"
 
-[node name="UtilSelectContainer" type="HBoxContainer" parent="UtilsHBoxContainer"]
+[node name="UtilSelectContainer" type="HBoxContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FertilizerButton" type="Button" parent="UtilsHBoxContainer/UtilSelectContainer"]
+[node name="FertilizerButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("2_0ylqd")
 
-[node name="PipeButton" type="Button" parent="UtilsHBoxContainer/UtilSelectContainer"]
+[node name="PipeButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("3_as1aq")
 
-[node name="ShovelButtin" type="Button" parent="UtilsHBoxContainer/UtilSelectContainer"]
+[node name="ShovelButtin" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("4_5ht4u")
 
-[node name="StatsHContainer" type="HBoxContainer" parent="."]
+[node name="CurrentModeLabel" type="Label" parent="CropsAndUtilsSelect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.0
+offset_top = 36.0
+offset_right = 152.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 26
+text = "CurrentMode: Farm"
+
+[node name="WaterControlAndStats" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_qqo3n")
+
+[node name="StatsHContainer" type="HBoxContainer" parent="WaterControlAndStats"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -84,12 +168,12 @@ offset_left = -202.0
 offset_bottom = 36.0
 grow_horizontal = 0
 
-[node name="ground_water" type="HBoxContainer" parent="StatsHContainer"]
+[node name="GroundWaterVContainer" type="HBoxContainer" parent="WaterControlAndStats/StatsHContainer"]
 layout_direction = 2
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="icon" type="TextureRect" parent="StatsHContainer/ground_water"]
+[node name="icon" type="TextureRect" parent="WaterControlAndStats/StatsHContainer/GroundWaterVContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -97,7 +181,7 @@ texture = ExtResource("3_mpix7")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="gw_amount" type="Label" parent="StatsHContainer/ground_water"]
+[node name="GroundWaterLabel" type="Label" parent="WaterControlAndStats/StatsHContainer/GroundWaterVContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = ":100%"
@@ -105,11 +189,11 @@ label_settings = SubResource("LabelSettings_newsv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="coins" type="HBoxContainer" parent="StatsHContainer"]
+[node name="CoinsVContainer" type="HBoxContainer" parent="WaterControlAndStats/StatsHContainer"]
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="icon" type="TextureRect" parent="StatsHContainer/coins"]
+[node name="icon" type="TextureRect" parent="WaterControlAndStats/StatsHContainer/CoinsVContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -117,7 +201,7 @@ texture = ExtResource("5_xly8j")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="coins_amount" type="Label" parent="StatsHContainer/coins"]
+[node name="CoinsLabel" type="Label" parent="WaterControlAndStats/StatsHContainer/CoinsVContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = ": 500"
@@ -125,53 +209,28 @@ label_settings = SubResource("LabelSettings_newsv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CropsVSplitContainer" type="VSplitContainer" parent="."]
+[node name="MoatWaterLevelBar" type="ProgressBar" parent="WaterControlAndStats"]
 layout_mode = 1
-offset_left = 41.0
-offset_top = 24.0
-offset_right = 83.0
-offset_bottom = 80.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 36
+value = 100.0
 
-[node name="currentCropVSplitContainer" type="VSplitContainer" parent="CropsVSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="currentCropHSplitContainer" type="HSplitContainer" parent="CropsVSplitContainer/currentCropVSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="currentCropSprite" type="TextureRect" parent="CropsVSplitContainer/currentCropVSplitContainer/currentCropHSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("8_r6spv")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="currentSpriteCount" type="Label" parent="CropsVSplitContainer/currentCropVSplitContainer/currentCropHSplitContainer"]
-layout_mode = 2
-text = "0"
-
-[node name="displayCropsButton" type="Button" parent="CropsVSplitContainer/currentCropVSplitContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-text = "\\/"
-
-[node name="selectCropHSplitContainer" type="HSplitContainer" parent="CropsVSplitContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="selectWheatButton" type="Button" parent="CropsVSplitContainer/selectCropHSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-icon = ExtResource("8_r6spv")
-icon_alignment = 1
-expand_icon = true
-
-[node name="selectPumpkinButton" type="Button" parent="CropsVSplitContainer/selectCropHSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-icon = ExtResource("9_hsgc1")
-icon_alignment = 1
-expand_icon = true
+[node name="TurnOnPumpButton" type="Button" parent="WaterControlAndStats"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -152.0
+offset_top = 60.0
+offset_right = -2.0
+offset_bottom = 121.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+text = "Turn On pump"

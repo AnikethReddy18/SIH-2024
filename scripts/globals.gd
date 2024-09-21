@@ -22,7 +22,7 @@ var coins: int = 500:
 		coins = value
 		coins_change.emit()	
 		
-var water_level: int:
+var water_level: int = 100:
 	set(value):
 		if value > 100:
 			water_level = 100
@@ -59,7 +59,7 @@ var util_count = [0,0,0]:
 var curr_mode = 0: # 0:plant 1:util
 	set(value):
 		curr_mode = value
-		curr_mode_changed.emit()
+		curr_mode_changed.emit()		
 var moat_water_level = 100:
 	set(value):
 		if value < 0 :

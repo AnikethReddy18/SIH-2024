@@ -13,6 +13,12 @@ extends Node
 func _input(_event):
 	if Input.is_action_just_pressed("use"):
 		_on_press_use()
+	
+	if Input.is_action_just_pressed("change_mode"):
+		if Globals.curr_mode == 0:
+			Globals.curr_mode = 1
+		else:
+			Globals.curr_mode = 0		
 
 func _process(_delta):
 	update_grid_helper_pos()

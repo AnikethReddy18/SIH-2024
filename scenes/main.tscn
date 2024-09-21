@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://b5fitekj1ggnf"]
+[gd_scene load_steps=25 format=4 uid="uid://b5fitekj1ggnf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pee8d"]
 [ext_resource type="Texture2D" uid="uid://dujkd8w36fqjk" path="res://assets/old/Mine/pump.png" id="2_hhujn"]
-[ext_resource type="Script" path="res://scripts/ui/pump.gd" id="3_4h7h3"]
 [ext_resource type="Texture2D" uid="uid://bwi1sbm8w28su" path="res://assets/old/Mine/water_for_pipe.png" id="4_4itoj"]
 [ext_resource type="Texture2D" uid="uid://cyuvlrutys8ha" path="res://assets/old/TileSheet/tileset.png" id="5_vkmpt"]
 [ext_resource type="Texture2D" uid="uid://bsicd222w6of3" path="res://assets/old/TileSheet/drip.png" id="6_tnqkm"]
@@ -10,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://droehy5x1nvmm" path="res://assets/old/TileSheet/fertilized_pipe.png" id="8_x57mu"]
 [ext_resource type="PackedScene" uid="uid://dq8lafjwu7qyu" path="res://objects/player/player.tscn" id="9_o8n6a"]
 [ext_resource type="Texture2D" uid="uid://b8xl614pb16yg" path="res://assets/old/TileSheet/grid_selector.png" id="10_l2bek"]
-[ext_resource type="Script" path="res://scripts/ui/water_handler.gd" id="11_uyaf3"]
+[ext_resource type="Script" path="res://scripts/ui/InGame/water_handler.gd" id="11_uyaf3"]
 [ext_resource type="Texture2D" uid="uid://dsax7f3rpjs5w" path="res://icons/icon.svg" id="12_ywkp0"]
-[ext_resource type="Script" path="res://scripts/ui/game_ui_manager.gd" id="13_3yq6t"]
 [ext_resource type="PackedScene" uid="uid://610r1btkj4hy" path="res://objects/ui/shop.tscn" id="15_cp7p8"]
 [ext_resource type="PackedScene" uid="uid://cahk8jujk4xhf" path="res://objects/ui/In Game/in_game_ui.tscn" id="15_qvk04"]
 [ext_resource type="Script" path="res://scripts/weather/weather_system.gd" id="17_5qcas"]
@@ -502,7 +500,6 @@ z_index = 2
 position = Vector2(-105, 81)
 texture = ExtResource("2_hhujn")
 flip_h = true
-script = ExtResource("3_4h7h3")
 
 [node name="WaterFlow" type="Sprite2D" parent="Pump"]
 texture = ExtResource("4_4itoj")
@@ -548,7 +545,6 @@ limit_left = -386
 limit_top = -182
 limit_right = 568
 limit_bottom = 286
-limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
@@ -567,41 +563,39 @@ script = ExtResource("11_uyaf3")
 visible = false
 
 [node name="Controls" type="Control" parent="MobileControls"]
-visible = false
 layout_mode = 3
-anchor_left = 0.127
-anchor_top = 0.591
-anchor_right = 0.312
-anchor_bottom = 0.886
-offset_left = -0.304001
-offset_top = 0.0319824
-offset_right = 0.575989
-offset_bottom = -0.128052
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 146.0
+offset_top = -265.0
+offset_right = 360.0
+offset_bottom = -74.0
 grow_vertical = 0
 
 [node name="w" type="TouchScreenButton" parent="MobileControls/Controls"]
-position = Vector2(38, -66)
+position = Vector2(35, -43)
 scale = Vector2(0.4, 0.371)
 texture_normal = ExtResource("12_ywkp0")
 shape = SubResource("RectangleShape2D_lesjc")
 action = "MoveUp"
 
 [node name="d" type="TouchScreenButton" parent="MobileControls/Controls"]
-position = Vector2(123, 5)
+position = Vector2(120, 28)
 scale = Vector2(0.4, 0.371)
 texture_normal = ExtResource("12_ywkp0")
 shape = SubResource("RectangleShape2D_lesjc")
 action = "MoveRight"
 
 [node name="s" type="TouchScreenButton" parent="MobileControls/Controls"]
-position = Vector2(41, 78)
+position = Vector2(38, 101)
 scale = Vector2(0.4, 0.371)
 texture_normal = ExtResource("12_ywkp0")
 shape = SubResource("RectangleShape2D_lesjc")
 action = "MoveDown"
 
 [node name="a" type="TouchScreenButton" parent="MobileControls/Controls"]
-position = Vector2(-48, 10)
+position = Vector2(-51, 33)
 scale = Vector2(0.4, 0.371)
 texture_normal = ExtResource("12_ywkp0")
 shape = SubResource("RectangleShape2D_lesjc")
@@ -635,73 +629,29 @@ texture_normal = ExtResource("12_ywkp0")
 shape = SubResource("CircleShape2D_gfchm")
 action = "shop"
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("13_3yq6t")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InGame" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="InGameUI" parent="CanvasLayer" instance=ExtResource("15_qvk04")]
+mouse_filter = 0
 
-[node name="MoatWaterLevelBar" type="ProgressBar" parent="UI/InGame"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -54.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 36
-value = 100.0
-
-[node name="ModeButton" type="CheckButton" parent="UI/InGame"]
-layout_mode = 0
-offset_left = 467.0
-offset_top = 44.0
-offset_right = 701.0
-offset_bottom = 95.0
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
-text = "Plant/util"
-
-[node name="TurnOnPumpButton" type="Button" parent="UI/InGame"]
-z_index = 5
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -75.0
-offset_top = 105.0
-offset_right = -44.0
-offset_bottom = 131.0
-grow_horizontal = 2
-mouse_default_cursor_shape = 2
-text = "ON"
-
-[node name="InGameUI" parent="UI/InGame" instance=ExtResource("15_qvk04")]
-layout_mode = 1
-
-[node name="Shop" parent="UI" instance=ExtResource("15_cp7p8")]
+[node name="Shop" parent="CanvasLayer" instance=ExtResource("15_cp7p8")]
 visible = false
 
-[node name="Weather" type="Node" parent="."]
+[node name="Node" type="Node" parent="."]
 script = ExtResource("17_5qcas")
 
-[node name="Rain" parent="Weather" instance=ExtResource("18_cxroj")]
+[node name="Rain" parent="Node" instance=ExtResource("18_cxroj")]
+visible = false
 position = Vector2(-1105, -348)
 
-[node name="wetting" type="Timer" parent="Weather"]
+[node name="wetting" type="Timer" parent="Node"]
 one_shot = true
 
-[node name="idle" type="Timer" parent="Weather"]
+[node name="idle" type="Timer" parent="Node"]
 one_shot = true
 
-[node name="extreme_sunny" type="Timer" parent="Weather"]
+[node name="extreme_sunny" type="Timer" parent="Node"]
 one_shot = true
 
-[node name="flooding" type="Timer" parent="Weather"]
+[node name="flooding" type="Timer" parent="Node"]
 one_shot = true

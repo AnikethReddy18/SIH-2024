@@ -2,7 +2,7 @@ extends Control
 
 
 #External Objects Refereces
-@onready var in_game = $"../InGame"
+@onready var in_game = $"../InGameUI"
 
 #Internal Object References
 @onready var fertilizer_amount_label = $CenterContainer/ShopPanel/BuyCenterContainer/UtilVBoxContainer/FertilizerHBoxContainer/FertilizerAmountLabel
