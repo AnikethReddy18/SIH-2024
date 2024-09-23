@@ -29,10 +29,16 @@ func ready_to_harvest():
 	harvest_ready = true
 
 func harvest():
+
 	if "pumpkin" in name:
 		Globals.pumpkin_count += 1
-	else:
+		
+	elif "wheat" in name:
 		Globals.wheat_count += 1	
+		
+	elif "duplicate" in name:
+		Globals.duplicate_this_count += 1
+		
 	Globals.coins += 2	
 	queue_free()	
 
@@ -42,8 +48,8 @@ func init_crop():
 	var dripped_crop = is_in_group('dripped_crop')
 	var dripped_fertilized_crop = is_in_group('dripped_fertilized')
 	
+
 	crop_growth_speed = 5 if fertilized_crop or dripped_fertilized_crop else 1
-	
 	animation_player.play(str(index))
 	timer.start(float(crop_growth_time/crop_growth_speed))
 	timer.timeout.connect(next_stage)

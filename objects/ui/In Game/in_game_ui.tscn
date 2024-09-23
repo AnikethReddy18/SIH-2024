@@ -48,45 +48,66 @@ offset_bottom = 80.0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="currentCropHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer"]
+[node name="CurrentCropPanelContainer" type="PanelContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 
-[node name="currentCropSprite" type="TextureRect" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/currentCropHSplitContainer"]
+[node name="WheatHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/CurrentCropPanelContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("8_r6spv")
-expand_mode = 2
-stretch_mode = 5
 
-[node name="currentSpriteCount" type="Label" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/currentCropHSplitContainer"]
+[node name="selectWheatButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/CurrentCropPanelContainer/WheatHSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+icon = ExtResource("8_r6spv")
+icon_alignment = 1
+
+[node name="WheatCountLabe;" type="Label" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer/CurrentCropPanelContainer/WheatHSplitContainer"]
 layout_mode = 2
 text = "0"
 
 [node name="displayCropsButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/currentCropVSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
 text = "\\/"
 
-[node name="selectCropHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer"]
+[node name="selectCropHBoxContainer" type="HBoxContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 8.82
 
-[node name="selectWheatButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHSplitContainer"]
+[node name="PumkinHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("8_r6spv")
-icon_alignment = 1
-expand_icon = true
 
-[node name="selectPumpkinButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHSplitContainer"]
+[node name="selectPumpkinButton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHBoxContainer/PumkinHSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+text = "P"
 icon = ExtResource("9_hsgc1")
 icon_alignment = 1
 expand_icon = true
+
+[node name="PumpkinCountLabel" type="Label" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHBoxContainer/PumkinHSplitContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Dupl" type="HSplitContainer" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DuplButtton" type="Button" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHBoxContainer/Dupl"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "D"
+icon_alignment = 1
+expand_icon = true
+
+[node name="DuplLabel" type="Label" parent="CropsAndUtilsSelect/CropsVSplitContainer/selectCropHBoxContainer/Dupl"]
+layout_mode = 2
+text = "0"
 
 [node name="UtilsHBoxContainer" type="HBoxContainer" parent="CropsAndUtilsSelect"]
 layout_mode = 1
