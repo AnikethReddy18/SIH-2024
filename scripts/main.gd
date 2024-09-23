@@ -1,14 +1,16 @@
 extends Node
 
+#Layers
+@onready var farm_layer = $Tilemap/FarmLayer
+@onready var grass_layer = $Tilemap/GrassLayer
+
 @onready var position_finder_layer = $Tilemap/PositionFinderLayer
-@onready var ground_layer = $Tilemap/garden
 @onready var tile_cords
 @onready var stored_plants ={}
 @onready var player = $World/Player
 @onready var base_layer = $Tilemap/PositionFinderLayer
 @onready var digged_cells = []
 @onready var grid_helper = $World/GridHelper
-@onready var grass_layer = $Tilemap/green_grass
 
 func _input(_event):
 	if Input.is_action_just_pressed("use"):
@@ -27,19 +29,20 @@ func _on_press_use():
 	if Globals.curr_mode == 1:
 		use_util_on_tile()
 	else:
-		var can_plant_seed = not stored_plants.has(tile_cords) and Globals.moat_water_level > 0		
-		if can_plant_seed:
-			plant_seed()
+		var seed_data = to_plant_seed()
+		if seed_data:	
+			plant_seed(seed_data[0], seed_data[1], seed_data[2], seed_data[3])
 		else:
 			if stored_plants.get(tile_cords) != null and stored_plants[tile_cords].harvest_ready:
 				harvest()	
-			
+
+
 func use_util_on_tile():
 	
 	var curr_util = Globals.curr_util
 	var util_count = Globals.util_count
 	
-	var layer = grass_layer if curr_util == 2 else ground_layer
+	var layer = grass_layer if curr_util == 2 else farm_layer
 	var custom_data = get_custom_cell_data(layer)
 	var fertilized = custom_data[0]
 	var drip_irrigated = custom_data[1]
@@ -95,23 +98,27 @@ func get_custom_cell_data(layer):
 	var custom_data = [fertilized, drip_irrigated, grass, fert_drip, ground]
 	
 	return custom_data
-	
-func plant_seed():
-	var can_plant_wheat = Globals.curr_seed == Globals.wheat_seed and Globals.wheat_count >= 1
-	var can_plant_pumpkin = Globals.curr_seed == Globals.pumpkin_seed and Globals.pumpkin_count >= 1
-	
-	var seed_to_plant = Globals.curr_seed.instantiate()
-	
-	var custom_data = get_custom_cell_data(ground_layer)
-	
-	if custom_data == null:
-		return
+
+func to_plant_seed():
+	if (not stored_plants.has(tile_cords) and Globals.moat_water_level > 0 and Globals.crop_count[Globals.curr_seed]>0):
+		var custom_data = get_custom_cell_data(farm_layer)
 		
-	var is_fertilized = custom_data[0]
-	var is_dripped = custom_data[1]
-	var is_dripped_fertilized = custom_data[3]
-	var is_ground = custom_data[4]
+		if custom_data == null:
+			return false
 		
+		var is_fertilized = custom_data[0]
+		var is_dripped = custom_data[1]
+		var is_dripped_fertilized = custom_data[3]
+		var is_farm = custom_data[4]
+		
+		return [is_fertilized, is_dripped, is_dripped_fertilized, is_farm]
+		
+	else:
+		return false	
+	
+func plant_seed(is_ground, is_fertilized, is_dripped, is_dripped_fertilized):
+	var seed_to_plant = Globals.seeds[Globals.curr_seed].instantiate()
+
 	if is_ground:
 		seed_to_plant.add_to_group('ground_crop')
 	elif is_fertilized:
@@ -121,19 +128,27 @@ func plant_seed():
 	elif is_dripped_fertilized:
 		seed_to_plant.add_to_group('dripped_fertilized')	
 			
-	if can_plant_wheat:
+	if Globals.curr_seed == "wheat":
 		stored_plants[tile_cords] = seed_to_plant
-		seed_to_plant.name = seed_to_plant.name + str(Globals.crop_count)
+		seed_to_plant.name = seed_to_plant.name + str(Globals.increment_number)
 		get_node("World/Crops").add_child(seed_to_plant)
-		seed_to_plant.global_position = ground_layer.map_to_local(tile_cords)
+		seed_to_plant.global_position = farm_layer.map_to_local(tile_cords)
 		Globals.wheat_count -= 1
 			
-	elif can_plant_pumpkin:
+	elif Globals.curr_seed == "pumpkin":
 		stored_plants[tile_cords] = seed_to_plant
-		seed_to_plant.name = seed_to_plant.name + str(Globals.crop_count)
+		seed_to_plant.name = seed_to_plant.name + str(Globals.increment_number)
 		get_node("World/Crops").add_child(seed_to_plant)
-		seed_to_plant.global_position = ground_layer.map_to_local(tile_cords)
+		seed_to_plant.global_position = farm_layer.map_to_local(tile_cords)
 		Globals.pumpkin_count -= 1	
+	
+	elif Globals.curr_seed == "duplicate this":
+		stored_plants[tile_cords] = seed_to_plant
+		
+		seed_to_plant.name = seed_to_plant.name + str(Globals.increment_number)
+		get_node("World/Crops").add_child(seed_to_plant)
+		seed_to_plant.global_position = farm_layer.map_to_local(tile_cords)
+		Globals.duplicate_this_count -= 1	
 		
 func harvest():
 	stored_plants[tile_cords].harvest()
