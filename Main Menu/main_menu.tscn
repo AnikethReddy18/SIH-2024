@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0nr0e1m21mee"]
+[gd_scene load_steps=5 format=3 uid="uid://d0nr0e1m21mee"]
 
 [ext_resource type="Texture2D" uid="uid://dvs7qaxii8b16" path="res://assets/old/Inventory/Inventory_Slot.png" id="1_hr8hl"]
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_ml6fj"]
+[ext_resource type="FontFile" uid="uid://bnvllro27eua7" path="res://assets/UI/fonts/Signwood-Regular.ttf" id="3_gk5j7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_udp0a"]
+font = ExtResource("3_gk5j7")
+font_size = 94
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -45,7 +52,8 @@ layout_mode = 2
 theme_override_constants/shadow_offset_x = 8
 theme_override_constants/outline_size = 24
 theme_override_font_sizes/font_size = 64
-text = "  BHUJAL"
+text = "  PROJECT BHUJAL"
+label_settings = SubResource("LabelSettings_udp0a")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -61,19 +69,22 @@ alignment = 1
 [node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_gk5j7")
+theme_override_font_sizes/font_size = 35
 text = "Start Game
 "
 
 [node name="leaderboard_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_gk5j7")
+theme_override_font_sizes/font_size = 35
 text = "LeaderBoard
 "
 
 [node name="exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("3_gk5j7")
+theme_override_font_sizes/font_size = 35
 text = "Exit Game"

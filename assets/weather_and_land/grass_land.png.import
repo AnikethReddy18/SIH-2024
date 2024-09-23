@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp5br63hjbkjo"
-path="res://.godot/imported/New Piskel(5)(1).png-5c4ec993db8e0a648b1e94a73d6a247b.ctex"
+uid="uid://dym65nu8b2rpc"
+path="res://.godot/imported/grass_land.png-15f0c89090045edef4204404df3ea2f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/weather_and_land/New Piskel(5)(1).png"
-dest_files=["res://.godot/imported/New Piskel(5)(1).png-5c4ec993db8e0a648b1e94a73d6a247b.ctex"]
+source_file="res://assets/weather_and_land/grass_land.png"
+dest_files=["res://.godot/imported/grass_land.png-15f0c89090045edef4204404df3ea2f8.ctex"]
 
 [params]
 
