@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0qd7tn1dhfn0"
-path="res://.godot/imported/storm-1.png.png-c42f82a9930d5c294c007c736b3b6ef7.ctex"
+uid="uid://cwp484u1fweao"
+path="res://.godot/imported/farmer.png-74da5729847df8c0ab932a1260e1c6e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/storm-1.png.png"
-dest_files=["res://.godot/imported/storm-1.png.png-c42f82a9930d5c294c007c736b3b6ef7.ctex"]
+source_file="res://assets/player/farmer.png"
+dest_files=["res://.godot/imported/farmer.png-74da5729847df8c0ab932a1260e1c6e4.ctex"]
 
 [params]
 

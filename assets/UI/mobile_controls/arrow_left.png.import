@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csem3f0snrcgb"
-path="res://.godot/imported/16x16pumpkin.png-473513fbbdda682304e38abffd6be818.ctex"
+uid="uid://brry8t2nkoe1h"
+path="res://.godot/imported/arrow_left.png-263b533eea36770d5c5a91c78aef5d43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/16x16pumpkin.png"
-dest_files=["res://.godot/imported/16x16pumpkin.png-473513fbbdda682304e38abffd6be818.ctex"]
+source_file="res://assets/UI/mobile_controls/arrow_left.png"
+dest_files=["res://.godot/imported/arrow_left.png-263b533eea36770d5c5a91c78aef5d43.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76lu1dh84m11"
-path="res://.godot/imported/DIG_WELL-2.png.png-84303d2849b1934eaa9d6c9eb00b5937.ctex"
+uid="uid://dvrrwcrxrq28r"
+path="res://.godot/imported/fetilized.png-977b93ab9511a1893e5e30e9f1615f0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/DIG_WELL-2.png.png"
-dest_files=["res://.godot/imported/DIG_WELL-2.png.png-84303d2849b1934eaa9d6c9eb00b5937.ctex"]
+source_file="res://assets/UI/icons/fetilized.png"
+dest_files=["res://.godot/imported/fetilized.png-977b93ab9511a1893e5e30e9f1615f0f.ctex"]
 
 [params]
 

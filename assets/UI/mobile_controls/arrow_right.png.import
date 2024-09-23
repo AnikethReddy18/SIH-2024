@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcf5t7pcd23ix"
-path="res://.godot/imported/sunny-3.png(1).png-01ad6e7061306244bd4b4cdb8b05e572.ctex"
+uid="uid://bvod85ne1rqwt"
+path="res://.godot/imported/arrow_right.png-9743d278b04544546ba7057d7600ab33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/sunny-3.png(1).png"
-dest_files=["res://.godot/imported/sunny-3.png(1).png-01ad6e7061306244bd4b4cdb8b05e572.ctex"]
+source_file="res://assets/UI/mobile_controls/arrow_right.png"
+dest_files=["res://.godot/imported/arrow_right.png-9743d278b04544546ba7057d7600ab33.ctex"]
 
 [params]
 

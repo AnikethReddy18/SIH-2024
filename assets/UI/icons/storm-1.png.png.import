@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4bip8avvfmac"
-path="res://.godot/imported/down_arrow.png-43c46ac572c9aaf126d9be1d221624bc.ctex"
+uid="uid://c0qd7tn1dhfn0"
+path="res://.godot/imported/storm-1.png.png-9a1b49385737310241b1616078128b99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/down_arrow.png"
-dest_files=["res://.godot/imported/down_arrow.png-43c46ac572c9aaf126d9be1d221624bc.ctex"]
+source_file="res://assets/UI/icons/storm-1.png.png"
+dest_files=["res://.godot/imported/storm-1.png.png-9a1b49385737310241b1616078128b99.ctex"]
 
 [params]
 

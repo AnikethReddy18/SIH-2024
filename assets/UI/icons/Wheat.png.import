@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e3o65n7m6otl"
-path="res://.godot/imported/heavy-rain.png-1cd59521b03deeb6bd04c898620b5e4f.ctex"
+uid="uid://1w8x8ontal3w"
+path="res://.godot/imported/Wheat.png-12db8bf69ec8d4f53fa7691701050c3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/heavy-rain.png"
-dest_files=["res://.godot/imported/heavy-rain.png-1cd59521b03deeb6bd04c898620b5e4f.ctex"]
+source_file="res://assets/UI/icons/Wheat.png"
+dest_files=["res://.godot/imported/Wheat.png-12db8bf69ec8d4f53fa7691701050c3e.ctex"]
 
 [params]
 

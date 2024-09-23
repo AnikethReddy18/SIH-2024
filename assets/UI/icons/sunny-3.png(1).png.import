@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dimcioy3r0whn"
-path="res://.godot/imported/ground_water-1.png(3).png-d8582b14e1d68ac9f3880d1eca28c091.ctex"
+uid="uid://dcf5t7pcd23ix"
+path="res://.godot/imported/sunny-3.png(1).png-5608886e524cdf416b88f0ebc54a14e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/ground_water-1.png(3).png"
-dest_files=["res://.godot/imported/ground_water-1.png(3).png-d8582b14e1d68ac9f3880d1eca28c091.ctex"]
+source_file="res://assets/UI/icons/sunny-3.png(1).png"
+dest_files=["res://.godot/imported/sunny-3.png(1).png-5608886e524cdf416b88f0ebc54a14e6.ctex"]
 
 [params]
 

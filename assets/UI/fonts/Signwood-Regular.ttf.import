@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bnvllro27eua7"
-path="res://.godot/imported/Signwood-Regular.ttf-2681ca6062107d003d1791362e9e8309.fontdata"
+path="res://.godot/imported/Signwood-Regular.ttf-3d492d5f79af97cb5e954eb0ddd1d2ff.fontdata"
 
 [deps]
 
-source_file="res://assets/UI/Signwood-Regular.ttf"
-dest_files=["res://.godot/imported/Signwood-Regular.ttf-2681ca6062107d003d1791362e9e8309.fontdata"]
+source_file="res://assets/UI/fonts/Signwood-Regular.ttf"
+dest_files=["res://.godot/imported/Signwood-Regular.ttf-3d492d5f79af97cb5e954eb0ddd1d2ff.fontdata"]
 
 [params]
 

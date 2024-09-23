@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvrrwcrxrq28r"
-path="res://.godot/imported/fetilized.png-b565e5ca10160eea79243c92852afe16.ctex"
+uid="uid://5ts4553bct3k"
+path="res://.godot/imported/sunny-3.png.png-b9d684905305d1e77770c9c560a6bd50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/fetilized.png"
-dest_files=["res://.godot/imported/fetilized.png-b565e5ca10160eea79243c92852afe16.ctex"]
+source_file="res://assets/UI/icons/sunny-3.png.png"
+dest_files=["res://.godot/imported/sunny-3.png.png-b9d684905305d1e77770c9c560a6bd50.ctex"]
 
 [params]
 

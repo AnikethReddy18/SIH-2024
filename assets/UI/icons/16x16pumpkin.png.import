@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp5br63hjbkjo"
-path="res://.godot/imported/New Piskel(5)(1).png-e95ad2e69e987e713c72ff0238624258.ctex"
+uid="uid://csem3f0snrcgb"
+path="res://.godot/imported/16x16pumpkin.png-25c4d385b3b3b8e4d61a1673543a0b4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather_and_land/New Piskel(5)(1).png"
-dest_files=["res://.godot/imported/New Piskel(5)(1).png-e95ad2e69e987e713c72ff0238624258.ctex"]
+source_file="res://assets/UI/icons/16x16pumpkin.png"
+dest_files=["res://.godot/imported/16x16pumpkin.png-25c4d385b3b3b8e4d61a1673543a0b4e.ctex"]
 
 [params]
 
