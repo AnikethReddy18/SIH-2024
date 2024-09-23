@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cl4c8kstht2ql" path="res://assets/old/Crops/wheat/wheat_00.png" id="2_i4ut4"]
 [ext_resource type="Texture2D" uid="uid://dsax7f3rpjs5w" path="res://icons/icon.svg" id="3_acbno"]
 [ext_resource type="Texture2D" uid="uid://cl3kds5mha2wu" path="res://assets/wasd.png" id="4_ptakx"]
-[ext_resource type="Texture2D" uid="uid://b4bip8avvfmac" path="res://assets/UI/down_arrow.png" id="5_5dln3"]
+[ext_resource type="Texture2D" uid="uid://6ncie0cto2x0" path="res://assets/UI/mobile_controls/arrow_down.png" id="5_5dln3"]
 [ext_resource type="Texture2D" uid="uid://ct7bfjnjkn8uc" path="res://assets/old/icons/shovel.png" id="6_cs45p"]
 
 [sub_resource type="Animation" id="Animation_aifqh"]
