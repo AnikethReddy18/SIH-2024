@@ -3,7 +3,7 @@ Updated Repo
 Contributers:
 	
 Aniketh - https://github.com/AnikethReddy18  
-Divyansh Shukla - https://github.com/TheHelltaker
+
 
 Srinith - https://github.com/brookwsoulking
 
