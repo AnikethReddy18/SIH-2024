@@ -62,10 +62,12 @@ var util_count = [0,0,0]:
 	set(value):
 		util_count = value
 		util_count_changed.emit()
+		
 var curr_mode = 0: # 0:plant 1:util
 	set(value):
 		curr_mode = value
-		curr_mode_changed.emit()		
+		curr_mode_changed.emit()	
+		
 var moat_water_level = 100:
 	set(value):
 		if value < 0 :

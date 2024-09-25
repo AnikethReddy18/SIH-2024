@@ -116,7 +116,7 @@ func to_plant_seed():
 	else:
 		return false	
 	
-func plant_seed(is_ground, is_fertilized, is_dripped, is_dripped_fertilized):
+func plant_seed(is_fertilized, is_dripped, is_dripped_fertilized, is_ground):
 	var seed_to_plant = Globals.seeds[Globals.curr_seed].instantiate()
 
 	if is_ground:
@@ -127,7 +127,7 @@ func plant_seed(is_ground, is_fertilized, is_dripped, is_dripped_fertilized):
 		seed_to_plant.add_to_group('dripped_crop')	
 	elif is_dripped_fertilized:
 		seed_to_plant.add_to_group('dripped_fertilized')	
-			
+	
 	if Globals.curr_seed == "wheat":
 		stored_plants[tile_cords] = seed_to_plant
 		seed_to_plant.name = seed_to_plant.name + str(Globals.increment_number)
