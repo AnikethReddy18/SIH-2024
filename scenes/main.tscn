@@ -527,6 +527,7 @@ tile_set = SubResource("TileSet_wl1ij")
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(134, 281)
 
 [node name="Player" parent="World" instance=ExtResource("9_o8n6a")]
 
