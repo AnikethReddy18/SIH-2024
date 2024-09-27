@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dym65nu8b2rpc"
-path="res://.godot/imported/grass_land.png-15f0c89090045edef4204404df3ea2f8.ctex"
+uid="uid://b1m0dfkciidyh"
+path="res://.godot/imported/sprinkler.png-aa06df3d92d121be2d9b3b5574455874.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather_and_land/grass_land.png"
-dest_files=["res://.godot/imported/grass_land.png-15f0c89090045edef4204404df3ea2f8.ctex"]
+source_file="res://assets/structures/sprinkler.png"
+dest_files=["res://.godot/imported/sprinkler.png-aa06df3d92d121be2d9b3b5574455874.ctex"]
 
 [params]
 

@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://clortr8la1cm8"]
+
+[ext_resource type="Script" path="res://drip_pipe.gd" id="1_vkrrx"]
+[ext_resource type="Texture2D" uid="uid://b31r1rod76b0t" path="res://assets/structures/drip_pipe.png" id="2_jtmil"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iif1n"]
+atlas = ExtResource("2_jtmil")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0g6t"]
+atlas = ExtResource("2_jtmil")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4du5"]
+atlas = ExtResource("2_jtmil")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wknio"]
+atlas = ExtResource("2_jtmil")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyald"]
+atlas = ExtResource("2_jtmil")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gejqg"]
+atlas = ExtResource("2_jtmil")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyy4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iif1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0g6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4du5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wknio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyald")
+}],
+"loop": true,
+"name": &"dripping",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gejqg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="drip pipe" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tyy4d")
+animation = &"dripping"
+frame_progress = 0.219177
+script = ExtResource("1_vkrrx")
+metadata/dripping = false

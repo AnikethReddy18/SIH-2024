@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp5br63hjbkjo"
-path="res://.godot/imported/wet_land.png-368e432b36503919776d2fe80fca8578.ctex"
+uid="uid://b31r1rod76b0t"
+path="res://.godot/imported/drip_pipe.png-6a37d92539f9c473066801a3a2d29698.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather_and_land/wet_land.png"
-dest_files=["res://.godot/imported/wet_land.png-368e432b36503919776d2fe80fca8578.ctex"]
+source_file="res://assets/structures/drip_pipe.png"
+dest_files=["res://.godot/imported/drip_pipe.png-6a37d92539f9c473066801a3a2d29698.ctex"]
 
 [params]
 

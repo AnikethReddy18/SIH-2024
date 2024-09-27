@@ -31,6 +31,7 @@ window/stretch/aspect="expand"
 
 [editor]
 
+movie_writer/movie_file="C:/Users/divya/OneDrive/Documents/Projects/SIH-2024-divy/gameplay/gameplay1.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
