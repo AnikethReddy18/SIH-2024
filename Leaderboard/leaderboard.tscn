@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5eaerqhga3uc"]
+[gd_scene load_steps=5 format=3 uid="uid://b5eaerqhga3uc"]
 
 [ext_resource type="Script" path="res://Leaderboard/leaderboard.gd" id="1_olo6w"]
 [ext_resource type="Texture2D" uid="uid://dy613m40vauyo" path="res://assets/old/Inventory/Inventory_background.png" id="1_p6gmm"]
+[ext_resource type="Theme" uid="uid://s5xv0gvoejyb" path="res://Main Menu/main_menu_theme.tres" id="1_whmar"]
 [ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="2_7jlmc"]
 
 [node name="leaderboard" type="Control"]
@@ -13,6 +14,7 @@ offset_left = 2.0
 offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_whmar")
 script = ExtResource("1_olo6w")
 
 [node name="TextureRect" type="TextureRect" parent="."]
