@@ -50,6 +50,7 @@ func init_crop():
 	
 
 	crop_growth_speed = 5 if fertilized_crop or dripped_fertilized_crop else 1
+	
 	animation_player.play(str(index))
 	timer.start(float(crop_growth_time/crop_growth_speed))
 	timer.timeout.connect(next_stage)

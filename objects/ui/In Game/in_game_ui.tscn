@@ -116,19 +116,19 @@ offset_top = 26.0
 offset_right = 235.0
 offset_bottom = 66.0
 
-[node name="CurrentUtilContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="CurrentUtilSprite" type="TextureRect" parent="CropsAndUtilsSelect/UtilsHBoxContainer/CurrentUtilContainer"]
+[node name="FertilizerHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer/PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-texture = ExtResource("2_0ylqd")
 
-[node name="CurrentUtilCountLabel" type="Label" parent="CropsAndUtilsSelect/UtilsHBoxContainer/CurrentUtilContainer"]
+[node name="FertilizerButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/PanelContainer/FertilizerHSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+icon = ExtResource("2_0ylqd")
+
+[node name="FertilizerCountLabel" type="Label" parent="CropsAndUtilsSelect/UtilsHBoxContainer/PanelContainer/FertilizerHSplitContainer"]
+layout_mode = 2
 text = "0"
 
 [node name="SelectUtilButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer"]
@@ -142,20 +142,29 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FertilizerButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
+[node name="PipeHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-icon = ExtResource("2_0ylqd")
 
-[node name="PipeButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
+[node name="PipeButton" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer/PipeHSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("3_as1aq")
 
-[node name="ShovelButtin" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
+[node name="PipeCountLabel" type="Label" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer/PipeHSplitContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="ShovelHSplitContainer" type="HSplitContainer" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer"]
+layout_mode = 2
+
+[node name="ShovelButtin" type="Button" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer/ShovelHSplitContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 icon = ExtResource("4_5ht4u")
+
+[node name="ShovelCountLabel" type="Label" parent="CropsAndUtilsSelect/UtilsHBoxContainer/UtilSelectContainer/ShovelHSplitContainer"]
+layout_mode = 2
+text = "0"
 
 [node name="CurrentModeLabel" type="Label" parent="CropsAndUtilsSelect"]
 layout_mode = 1
