@@ -1,14 +1,14 @@
 extends Node
 
 #Layers
-@onready var farm_layer = $Tilemap/FarmLayer
-@onready var grass_layer = $Tilemap/GrassLayer
+@onready var farm_layer = $Land/FarmLayer
+@onready var grass_layer = $Land/GrassLayer
 
-@onready var position_finder_layer = $Tilemap/PositionFinderLayer
+@onready var position_finder_layer = $Land/PositionFinderLayer
 @onready var tile_cords
 @onready var stored_plants ={}
 @onready var player = $World/Player
-@onready var base_layer = $Tilemap/PositionFinderLayer
+@onready var base_layer = $Land/PositionFinderLayer
 @onready var digged_cells = []
 @onready var grid_helper = $World/GridHelper
 
