@@ -1,20 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0nr0e1m21mee"]
+[gd_scene load_steps=10 format=3 uid="uid://d0nr0e1m21mee"]
 
 [ext_resource type="Theme" uid="uid://s5xv0gvoejyb" path="res://Main Menu/main_menu_theme.tres" id="1_bo01l"]
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_ml6fj"]
 [ext_resource type="FontFile" uid="uid://bnvllro27eua7" path="res://assets/UI/fonts/Signwood-Regular.ttf" id="3_gk5j7"]
 [ext_resource type="Texture2D" uid="uid://7iac3pymuiwi" path="res://Main Menu/WhatsApp Image 2024-09-24 at 22.18.03_17e0f5a1.jpg" id="3_nipe5"]
 [ext_resource type="Texture2D" uid="uid://cb6cfhge0osyj" path="res://Main Menu/GUI.png" id="4_0kynr"]
+[ext_resource type="Texture2D" uid="uid://dddh0acbrhgqj" path="res://icons/PROJECT BHUJAL LOGO TRANSPARENT.png" id="5_fy4yk"]
+[ext_resource type="Texture2D" uid="uid://buoknkyxxet1c" path="res://icons/Team AVYAY logo new.png" id="7_7m2ln"]
+[ext_resource type="Texture2D" uid="uid://c7jnj536jju5s" path="res://icons/SIH_logo_2024_horizontal_new.png" id="8_186j8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfarf"]
 atlas = ExtResource("4_0kynr")
 region = Rect2(2, 34, 44, 44)
-
-[sub_resource type="LabelSettings" id="LabelSettings_udp0a"]
-font = ExtResource("3_gk5j7")
-font_size = 94
-outline_size = 7
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -65,15 +62,10 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="project_bhujal" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 64
-text = "  PROJECT BHUJAL"
-label_settings = SubResource("LabelSettings_udp0a")
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("5_fy4yk")
+stretch_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -109,3 +101,34 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gk5j7")
 theme_override_font_sizes/font_size = 35
 text = "Exit Game"
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1112.0
+offset_bottom = -608.0
+scale = Vector2(0.280001, 0.280001)
+
+[node name="team_avyay" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("7_7m2ln")
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 944.0
+offset_top = 1.0
+offset_right = 6717.0
+offset_bottom = 2895.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.03, 0.03)
+
+[node name="SIH" type="TextureRect" parent="AspectRatioContainer2"]
+layout_mode = 2
+texture = ExtResource("8_186j8")
+stretch_mode = 5
