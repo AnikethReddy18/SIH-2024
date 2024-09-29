@@ -29,6 +29,8 @@ signal util_count_changed
 signal curr_mode_changed
 signal moat_water_level_changed
 signal duplicate_this_count_changed
+
+signal aim_position_changed
 # Variables
 
 var coins: int = 500: 
@@ -106,3 +108,11 @@ var duplicate_this_count = 2:
 		
 var crop_count=  {"wheat": wheat_count, "pumpkin": pumpkin_count, "duplicate this": duplicate_this_count}
 var seeds = {"wheat": wheat_seed, "pumpkin": pumpkin_seed, "duplicate this": DUPLICATE_THIS}
+
+
+#Aim tile position
+var aim : Vector2i = Vector2i.ZERO :
+	set(coords):
+		aim = coords
+		aim_position_changed.emit();
+		
