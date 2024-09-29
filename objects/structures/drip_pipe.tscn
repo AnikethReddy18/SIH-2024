@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://clortr8la1cm8"]
 
-[ext_resource type="Script" path="res://drip_pipe.gd" id="1_vkrrx"]
+[ext_resource type="Script" path="res://scripts/object scripts/drip_pipe.gd" id="1_vkrrx"]
 [ext_resource type="Texture2D" uid="uid://b31r1rod76b0t" path="res://assets/structures/drip_pipe.png" id="2_jtmil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iif1n"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://g4cmwube4kg4"]
 
 [ext_resource type="Texture2D" uid="uid://4dkfpdo5hv1u" path="res://assets/structures/tubewell.png" id="1_2wpuy"]
-[ext_resource type="Script" path="res://tubewell.gd" id="1_vbl4q"]
+[ext_resource type="Script" path="res://scripts/object scripts/tubewell.gd" id="1_vbl4q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3ck4"]
 atlas = ExtResource("1_2wpuy")

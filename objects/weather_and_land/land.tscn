@@ -1,18 +1,18 @@
 [gd_scene load_steps=24 format=4 uid="uid://cmwgmie0ofsfi"]
 
-[ext_resource type="Texture2D" uid="uid://cg3ir8vs01syk" path="res://assets/weather_and_land/tiles.png" id="1_gl8hl"]
-[ext_resource type="PackedScene" uid="uid://g4cmwube4kg4" path="res://tubewell.tscn" id="2_b88yx"]
-[ext_resource type="PackedScene" uid="uid://cl15ti52otq3k" path="res://objects/crops/wheat.tscn" id="3_8ygw6"]
-[ext_resource type="Texture2D" uid="uid://d4d3jn51djqjs" path="res://assets/weather_and_land/fertilizer.png" id="3_wqb5n"]
-[ext_resource type="PackedScene" uid="uid://iuopw2fgp3bj" path="res://objects/crops/pumpkin.tscn" id="4_4r20p"]
-[ext_resource type="PackedScene" uid="uid://clortr8la1cm8" path="res://drip_pipe.tscn" id="4_5ar62"]
-[ext_resource type="PackedScene" uid="uid://ccn7c0rp8c8c1" path="res://sprinkler.tscn" id="5_h4w1l"]
-[ext_resource type="PackedScene" uid="uid://b5l2bs7jm7nuk" path="res://recovery_well.tscn" id="7_1gbej"]
-[ext_resource type="Texture2D" uid="uid://78bdwn607r5s" path="res://assets/UI/aim.png" id="7_xaqfm"]
+[ext_resource type="Texture2D" uid="uid://cg3ir8vs01syk" path="res://assets/weather_and_land/tiles.png" id="1_appib"]
+[ext_resource type="Texture2D" uid="uid://d4d3jn51djqjs" path="res://assets/weather_and_land/fertilizer.png" id="2_peg5h"]
+[ext_resource type="PackedScene" uid="uid://clortr8la1cm8" path="res://objects/structures/drip_pipe.tscn" id="3_oeup6"]
+[ext_resource type="PackedScene" uid="uid://cl15ti52otq3k" path="res://objects/crops/wheat.tscn" id="4_52sde"]
+[ext_resource type="PackedScene" uid="uid://iuopw2fgp3bj" path="res://objects/crops/pumpkin.tscn" id="5_k8t73"]
+[ext_resource type="PackedScene" uid="uid://g4cmwube4kg4" path="res://objects/structures/tubewell.tscn" id="6_x7831"]
+[ext_resource type="PackedScene" uid="uid://ccn7c0rp8c8c1" path="res://objects/structures/sprinkler.tscn" id="7_ge7tp"]
+[ext_resource type="PackedScene" uid="uid://b5l2bs7jm7nuk" path="res://objects/structures/recovery_well.tscn" id="8_nenn0"]
+[ext_resource type="Texture2D" uid="uid://78bdwn607r5s" path="res://assets/UI/aim.png" id="9_xtsin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m8b6j"]
 resource_name = "land"
-texture = ExtResource("1_gl8hl")
+texture = ExtResource("1_appib")
 13:0/0 = 0
 13:0/0/terrain_set = 0
 13:0/0/terrain = 5
@@ -1990,21 +1990,21 @@ custom_data_layer_4/type = 1
 sources/1 = SubResource("TileSetAtlasSource_m8b6j")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88x50"]
-texture = ExtResource("3_wqb5n")
+texture = ExtResource("2_peg5h")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_iv8wq"]
 sources/0 = SubResource("TileSetAtlasSource_88x50")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_sriij"]
-scenes/1/scene = ExtResource("4_5ar62")
+scenes/1/scene = ExtResource("3_oeup6")
 
 [sub_resource type="TileSet" id="TileSet_6ib58"]
 sources/0 = SubResource("TileSetScenesCollectionSource_sriij")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_eaiwn"]
-scenes/1/scene = ExtResource("3_8ygw6")
-scenes/3/scene = ExtResource("4_4r20p")
+scenes/1/scene = ExtResource("4_52sde")
+scenes/3/scene = ExtResource("5_k8t73")
 
 [sub_resource type="TileSet" id="TileSet_l8poa"]
 sources/0 = SubResource("TileSetScenesCollectionSource_eaiwn")
@@ -2016,9 +2016,9 @@ tile_data = PackedInt32Array(0, 3, 0, 65536, 3, 1, 1, 65539, 0, 65537, 65539, 1)
 tile_data = PackedInt32Array(0, 131075, 0, 65536, 131075, 1, 1, 196611, 0, 65537, 196611, 1)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6x7r0"]
-scenes/1/scene = ExtResource("2_b88yx")
-scenes/3/scene = ExtResource("5_h4w1l")
-scenes/5/scene = ExtResource("7_1gbej")
+scenes/1/scene = ExtResource("6_x7831")
+scenes/3/scene = ExtResource("7_ge7tp")
+scenes/5/scene = ExtResource("8_nenn0")
 
 [sub_resource type="TileSet" id="TileSet_2mvq6"]
 sources/0 = SubResource("TileSetScenesCollectionSource_6x7r0")
@@ -2027,7 +2027,7 @@ pattern_0 = SubResource("TileMapPattern_mqny3")
 pattern_1 = SubResource("TileMapPattern_o43m2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26nth"]
-texture = ExtResource("7_xaqfm")
+texture = ExtResource("9_xtsin")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_l0vro"]
@@ -2061,28 +2061,3 @@ tile_set = SubResource("TileSet_2mvq6")
 [node name="Aim" type="TileMapLayer" parent="."]
 z_index = 8
 tile_set = SubResource("TileSet_l0vro")
-
-[connection signal="body_entered" from="Structures/sprinkler" to="Structures/sprinkler" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/sprinkler" to="Structures/sprinkler" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171336" to="Structures/@Area2D@1171336" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171336" to="Structures/@Area2D@1171336" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171337" to="Structures/@Area2D@1171337" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171337" to="Structures/@Area2D@1171337" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/Tubewell" to="Structures/Tubewell" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/Tubewell" to="Structures/Tubewell" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171338" to="Structures/@Area2D@1171338" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171338" to="Structures/@Area2D@1171338" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171347" to="Structures/@Area2D@1171347" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171347" to="Structures/@Area2D@1171347" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171348" to="Structures/@Area2D@1171348" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171348" to="Structures/@Area2D@1171348" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171349" to="Structures/@Area2D@1171349" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171349" to="Structures/@Area2D@1171349" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171350" to="Structures/@Area2D@1171350" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171350" to="Structures/@Area2D@1171350" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171351" to="Structures/@Area2D@1171351" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171351" to="Structures/@Area2D@1171351" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171352" to="Structures/@Area2D@1171352" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171352" to="Structures/@Area2D@1171352" method="_on_body_exited"]
-[connection signal="body_entered" from="Structures/@Area2D@1171353" to="Structures/@Area2D@1171353" method="_on_body_entered"]
-[connection signal="body_exited" from="Structures/@Area2D@1171353" to="Structures/@Area2D@1171353" method="_on_body_exited"]

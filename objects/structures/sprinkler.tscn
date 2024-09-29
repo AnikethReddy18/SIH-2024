@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ccn7c0rp8c8c1"]
 
-[ext_resource type="Script" path="res://sprinkler.gd" id="1_kaapc"]
+[ext_resource type="Script" path="res://scripts/object scripts/sprinkler.gd" id="1_kaapc"]
 [ext_resource type="Texture2D" uid="uid://b1m0dfkciidyh" path="res://assets/structures/sprinkler.png" id="1_s2fph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3r1y"]

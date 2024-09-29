@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b5l2bs7jm7nuk"]
 
-[ext_resource type="Script" path="res://recovery_well.gd" id="1_5ol2b"]
+[ext_resource type="Script" path="res://scripts/object scripts/recovery_well.gd" id="1_5ol2b"]
 [ext_resource type="Texture2D" uid="uid://dqsd2c6fwuncu" path="res://assets/structures/DIG_WELL.png" id="1_fdc6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6aa1m"]
