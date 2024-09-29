@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5l2bs7jm7nuk"]
+[gd_scene load_steps=7 format=3 uid="uid://b5l2bs7jm7nuk"]
 
+[ext_resource type="Script" path="res://recovery_well.gd" id="1_5ol2b"]
 [ext_resource type="Texture2D" uid="uid://dqsd2c6fwuncu" path="res://assets/structures/DIG_WELL.png" id="1_fdc6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6aa1m"]
@@ -33,6 +34,7 @@ animations = [{
 radius = 9.0
 
 [node name="recovery_well" type="Area2D"]
+script = ExtResource("1_5ol2b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n0ljg")

@@ -80,7 +80,7 @@ var rain_type : String: # "none" , "light" , "medium" , "heavy", "storm"
 	set(type):
 		rain_type = type
 		is_raining.emit()
-var weather_status : String: #idle wetting extreme_sunny flooding
+var weather_status : String: # "idle", "wetting", "extreme_sunny", "flooding"
 	set(status):
 		weather_status = status
 		weather_status_changed.emit()
