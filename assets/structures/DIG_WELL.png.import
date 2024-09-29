@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqjsqqyxamj76"
-path="res://.godot/imported/moist_soil.png-7d4c1ef8f389f9c1cf9d3c0df89a95eb.ctex"
+uid="uid://dqsd2c6fwuncu"
+path="res://.godot/imported/DIG_WELL.png-bf4b4a0c48b12ceecf80fc85cd224e9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weather_and_land/moist_soil.png"
-dest_files=["res://.godot/imported/moist_soil.png-7d4c1ef8f389f9c1cf9d3c0df89a95eb.ctex"]
+source_file="res://assets/structures/DIG_WELL.png"
+dest_files=["res://.godot/imported/DIG_WELL.png-bf4b4a0c48b12ceecf80fc85cd224e9e.ctex"]
 
 [params]
 
