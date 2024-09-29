@@ -3,13 +3,11 @@ extends Control
 @onready var ground_water_label: Label = $StatsHContainer/GroundWaterVContainer/GroundWaterLabel
 @onready var coins_label: Label = $StatsHContainer/CoinsVContainer/CoinsLabel
 @onready var moat_water_level_bar: ProgressBar = $MoatWaterLevelBar
-@onready var turn_on_pump_button: Button = $TurnOnPumpButton
 
 func _ready() -> void:
 	Globals.water_level_change.connect(_on_ground_water_level_changed)
 	Globals.coins_change.connect(_on_coins_amount_changed)
 	Globals.moat_water_level_changed.connect(_on_moat_water_level_changed)
-	turn_on_pump_button.pressed.connect(_on_turn_on_pump_button_pressed)
 
 func _on_ground_water_level_changed():
 	ground_water_label.text = str(Globals.water_level) + "%"

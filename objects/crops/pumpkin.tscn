@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bco1w5y7kccnw"]
+[gd_scene load_steps=14 format=3 uid="uid://iuopw2fgp3bj"]
 
 [ext_resource type="Script" path="res://scripts/object scripts/crop.gd" id="1_eboyi"]
 [ext_resource type="Texture2D" uid="uid://cl4c8kstht2ql" path="res://assets/old/Crops/wheat/wheat_00.png" id="2_i8lhv"]
@@ -91,11 +91,15 @@ _data = {
 "RESET": SubResource("Animation_6m8er")
 }
 
-[node name="pumpkin" type="Node2D" groups=["pumpkins"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfsqt"]
+size = Vector2(6, 6)
+
+[node name="pumpkin" type="Area2D" groups=["pumpkins"]]
 script = ExtResource("1_eboyi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(-5.96046e-08, -5.96046e-08)
+scale = Vector2(0.857143, 0.857143)
 texture = ExtResource("2_i8lhv")
 region_rect = Rect2(48, 104, 16, 24)
 
@@ -108,4 +112,8 @@ libraries = {
 wait_time = 5.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dfsqt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

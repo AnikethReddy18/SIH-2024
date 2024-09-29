@@ -15,7 +15,7 @@ extends Node
 #Preloads
 const wheat_seed = preload("res://objects/crops/wheat.tscn")
 const pumpkin_seed = preload("res://objects/crops/pumpkin.tscn")
-const DUPLICATE_THIS = preload("res://objects/crops/duplicate this.tscn")
+#const DUPLICATE_THIS = preload("res://objects/crops/duplicate this.tscn")
 
 # Signals
 signal coins_change
@@ -29,6 +29,10 @@ signal util_count_changed
 signal curr_mode_changed
 signal moat_water_level_changed
 signal duplicate_this_count_changed
+
+
+signal use_object
+signal harvest_crop
 
 signal aim_position_changed
 # Variables
@@ -59,11 +63,23 @@ var fertilized_tiles: int:
 		fertilized_tiles_number_change.emit()
 var dugged_holes_count= 0
 
-var curr_util: int = 0# fertilizer:0, pipe:1, shovel:2
-var util_count = [0,0,0]: 
-	set(value):
-		util_count = value
-		util_count_changed.emit()
+var curr_util: int = 0 # fertilizer:0, drip_pipes:1, plough:2, sickle:3, shovel:4
+
+var util_count : Dictionary = {
+	0:0, #fertilizer
+	1:0, #drip pipes
+	2:1, #plough
+	3:1, #sickle
+	4:0  #shovel
+}
+
+func set_util_count(key : int,value : int):
+	util_count[key] = value
+	util_count_changed.emit()
+	
+func change_util_count(key : int,value : int):
+	util_count[key] += value
+	util_count_changed.emit()
 		
 var curr_mode = 0: # 0:plant 1:util
 	set(value):
@@ -100,19 +116,19 @@ var pumpkin_count: int:
 		crop_count["pumpkin"] = value
 		pumpkin_count_change.emit()
 
-var duplicate_this_count = 2:
-	set(value):
-		duplicate_this_count = value
-		crop_count["duplicate"] = value
-		duplicate_this_count_changed.emit()		
+#var duplicate_this_count = 2:
+	#set(value):
+		#duplicate_this_count = value
+		#crop_count["duplicate"] = value
+		#duplicate_this_count_changed.emit()		
 		
-var crop_count=  {"wheat": wheat_count, "pumpkin": pumpkin_count, "duplicate this": duplicate_this_count}
-var seeds = {"wheat": wheat_seed, "pumpkin": pumpkin_seed, "duplicate this": DUPLICATE_THIS}
+var crop_count=  {"wheat": wheat_count, "pumpkin": pumpkin_count}
+var seeds = {"wheat": wheat_seed, "pumpkin": pumpkin_seed}
 
 
 #Aim tile position
-var aim : Vector2i = Vector2i.ZERO :
+var aim_pos : Vector2i = Vector2i.ZERO :
 	set(coords):
-		aim = coords
+		aim_pos = coords
 		aim_position_changed.emit();
 		

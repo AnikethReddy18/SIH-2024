@@ -11,9 +11,11 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if player_in and Input.is_action_just_pressed("use"):
+	Globals.use_object.connect(toggle)
+
+func toggle():
+	if player_in:
 		if get_meta("pumping"):
 			animation.play("idle")
 			set_meta("pumping",false)

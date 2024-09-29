@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct7bfjnjkn8uc"
-path="res://.godot/imported/shovel.png-2b05d88486892aced80a4799cb4585fe.ctex"
+uid="uid://lra34floyjnp"
+path="res://.godot/imported/menu.png-f170238e604871f6a61dd2375fa0235f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/old/icons/shovel.png"
-dest_files=["res://.godot/imported/shovel.png-2b05d88486892aced80a4799cb4585fe.ctex"]
+source_file="res://assets/UI/icons/menu.png"
+dest_files=["res://.godot/imported/menu.png-f170238e604871f6a61dd2375fa0235f.ctex"]
 
 [params]
 
