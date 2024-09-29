@@ -42,17 +42,18 @@ var coins: int = 500:
 		coins = value
 		coins_change.emit()	
 		
-var water_level: int = 100:
+var water_level: float = 100.0:
 	set(value):
-		if value > 100:
-			water_level = 100
-		elif value >= 0:
+		if value > 100.0:
+			water_level = 100.0
+		elif value >= 0.0:
 			water_level = value	
 		else:
 			if value > water_level:
-				water_level = 1
-			water_level = 0
+				water_level = 1.0
+			water_level = 0.0
 		water_level_change.emit()				
+		print(water_level)
 
 var increment_number = 0: 
 	get():

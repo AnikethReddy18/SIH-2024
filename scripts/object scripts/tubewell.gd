@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var body = $CollisionPolygon2D
 @onready var animation = $AnimatedSprite2D
+@onready var timer = $Timer
 
 var player_in : bool
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +14,11 @@ func _ready():
 
 func _physics_process(delta):
 	Globals.use_object.connect(toggle)
+	if get_meta("pumping") and timer.is_stopped():
+		Globals.water_level -= 0.5
+		timer.start()
+		
+		
 
 func toggle():
 	if player_in:

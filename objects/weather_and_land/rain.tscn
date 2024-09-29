@@ -18,7 +18,7 @@ shader_parameter/additional_rain_speed = 0.7
 shader_parameter/slant = 0.6
 
 [node name="Rain" type="Node2D"]
-scale = Vector2(0.01, 0.007)
+scale = Vector2(100, 70)
 script = ExtResource("1_eqncj")
 metadata/rain_type = "none"
 

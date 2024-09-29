@@ -116,8 +116,8 @@ script = ExtResource("17_5qcas")
 
 [node name="Rain" parent="Weather" instance=ExtResource("18_cxroj")]
 z_index = 100
-position = Vector2(-360, -101)
-scale = Vector2(1, 0.7)
+position = Vector2(-1145, -593)
+scale = Vector2(1.25, 1.211)
 
 [node name="wetting" type="Timer" parent="Weather"]
 one_shot = true
