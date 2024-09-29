@@ -7,6 +7,7 @@ var crop_growth_speed: int = 1
 
 #Properties
 var harvest_ready: bool = false
+var player_in : bool = false
 
 # Refernces
 @onready var animation_player = $AnimationPlayer
@@ -14,6 +15,7 @@ var harvest_ready: bool = false
 
 func _ready():
 	init_crop()
+	Globals.harvest_crop.connect(harvest)
 
 func next_stage():
 	#Displays new crop stage and calls harvest method
@@ -29,18 +31,10 @@ func ready_to_harvest():
 	harvest_ready = true
 
 func harvest():
-
-	if "pumpkin" in name:
-		Globals.pumpkin_count += 1
-		
-	elif "wheat" in name:
-		Globals.wheat_count += 1	
-		
-	elif "duplicate" in name:
-		Globals.duplicate_this_count += 1
-		
-	Globals.coins += 2	
-	queue_free()	
+	if harvest_ready and player_in:
+		print("harvesation")
+		Globals.coins += 2	
+		queue_free()	
 
 func init_crop():
 	# Sets growth speed and starts crop growth
@@ -54,3 +48,16 @@ func init_crop():
 	animation_player.play(str(index))
 	timer.start(float(crop_growth_time/crop_growth_speed))
 	timer.timeout.connect(next_stage)
+
+
+
+func _on_body_entered(body):
+	print("player in pumpkin")
+	player_in = true
+	pass # Replace with function body.
+
+
+func _on_body_exited(body):
+	print("player out pumpkin")
+	player_in = false
+	pass # Replace with function body.

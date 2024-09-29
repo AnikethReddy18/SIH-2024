@@ -9,6 +9,9 @@ extends Node
 var rng = RandomNumberGenerator.new()
 var rain_types : Array[String] = ["light","medium","heavy"]
 
+func _ready():
+	Globals.rain_type = "none"
+
 func _physics_process(_delta):
 	update_wait_times()
 	var rn2 = rng.randi_range(0,3)

@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://g4cmwube4kg4"]
+
+[ext_resource type="Texture2D" uid="uid://4dkfpdo5hv1u" path="res://assets/structures/tubewell.png" id="1_2wpuy"]
+[ext_resource type="Script" path="res://scripts/object scripts/tubewell.gd" id="1_vbl4q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ck4"]
+atlas = ExtResource("1_2wpuy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_harpx"]
+atlas = ExtResource("1_2wpuy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht0al"]
+atlas = ExtResource("1_2wpuy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjinu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ck4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_harpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht0al")
+}],
+"loop": true,
+"name": &"pumping",
+"speed": 5.0
+}]
+
+[node name="Tubewell" type="Area2D"]
+position = Vector2(-1, -8)
+script = ExtResource("1_vbl4q")
+metadata/pumping = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_mjinu")
+animation = &"idle"
+autoplay = "pumping"
+frame_progress = 0.489785
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+polygon = PackedVector2Array(10, 1, 10, -4, 7, -7, -1, -7, -1, -3, 3, -3, 5, -1, 5, 2, 5, 3, 10, 3)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

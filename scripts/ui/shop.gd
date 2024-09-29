@@ -50,24 +50,21 @@ func _on_coins_amount_change():
 func _on_util_count_change():
 	fertilizer_amount_label.text = str(Globals.util_count[0])
 	drip_pipes_amount_label.text = str(Globals.util_count[1])
-	recovery_well_amount_label.text = str(Globals.util_count[2])
+	recovery_well_amount_label.text = str(Globals.util_count[4])
 	
 func _on_buy_fertilizer_button_pressed():
 	if Globals.coins > 20:
-		var x = Globals.util_count
-		Globals.util_count = [x[0]+1, x[1], x[2]]	
+		Globals.change_util_count(0,1)	
 		Globals.coins -= 20
 		
 func _on_buy_pipes_button_pressed():
 	if Globals.coins > 20:
-		var x = Globals.util_count
-		Globals.util_count = [x[0], x[1]+1, x[2]]	
+		Globals.change_util_count(1,1)	
 		Globals.coins -= 20
 		
 func _on_buy_wells_button_pressed():
 	if Globals.coins > 20:
-		var x = Globals.util_count
-		Globals.util_count = [x[0], x[1], x[2]+1]	
+		Globals.change_util_count(4,1)	
 		Globals.coins -= 20				
 
 func _on_buy_wheat_button_pressed():

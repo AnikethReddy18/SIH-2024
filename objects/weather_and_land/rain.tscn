@@ -5,9 +5,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_unxf4"]
 shader = ExtResource("1_8vpf5")
-shader_parameter/rain_amount = 1000.0
-shader_parameter/near_rain_length = 0.1
-shader_parameter/far_rain_length = 0.15
+shader_parameter/rain_amount = 700.0
+shader_parameter/near_rain_length = 0.05
+shader_parameter/far_rain_length = 0.01
 shader_parameter/near_rain_width = 0.5
 shader_parameter/far_rain_width = 0.6
 shader_parameter/near_rain_transparency = 1.0
@@ -18,13 +18,12 @@ shader_parameter/additional_rain_speed = 0.7
 shader_parameter/slant = 0.6
 
 [node name="Rain" type="Node2D"]
-scale = Vector2(0.01, 0.007)
+scale = Vector2(100, 70)
 script = ExtResource("1_eqncj")
 metadata/rain_type = "none"
 
 [node name="rain" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_unxf4")
-offset_right = 131.0
-offset_bottom = 100.0
-scale = Vector2(1831.87, 1394.81)
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.160784, 0.160784, 0.160784, 0.603922)
