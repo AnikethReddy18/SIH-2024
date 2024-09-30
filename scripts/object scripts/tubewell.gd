@@ -7,7 +7,7 @@ extends Area2D
 var player_in : bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
- Globals.use_object.connect(toggle)
+	Globals.use_object.connect(toggle)
 	animation.play("idle") 
 	player_in = false
 	pass # Replace with function body.
