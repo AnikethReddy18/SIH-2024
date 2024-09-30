@@ -7,13 +7,14 @@ extends Area2D
 var player_in : bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
+ Globals.use_object.connect(toggle)
 	animation.play("idle") 
 	player_in = false
 	pass # Replace with function body.
 
 
 func _physics_process(delta):
-	Globals.use_object.connect(toggle)
+	
 	if get_meta("pumping") and timer.is_stopped():
 		Globals.water_level -= 0.5
 		timer.start()
